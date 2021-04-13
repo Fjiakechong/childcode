@@ -35,11 +35,49 @@ window.onload=function(){
                  none();             
              },
              error:function(err){
-                 console.log("错误");
-                 alert("参数错误！")
+                alert("参数错误！");
+                 console.log("错误");              
                  none();   
              },
         })
+        };
+           //修改菜品
+           var revise=function(){
+            document.getElementById("addWindow").style.display="none";
+        }           
+        document.getElementById("reviseWindow").onclick=function(){
+            document.getElementById("reviseWindow").style.display="block";
+            document.getElementById("reviseMenuAdd").onclick=function(){
+                var reviseName=document.getElementById("reviseNameInput").value;
+                var revisePrice=document.getElementById("revisePriceInput").value;
+                var reviseDesc=document.getElementById("reviseDescInput").value;
+                var reviseTypename=document.getElementById("reviseTypenameInput").value;
+                var reviseId=document.getElementById("reviseIdInput").value;
+                var revise_id=document.getElementById("revise_idInput").value;
+                $.ajax({
+                    url:"http://118.195.129.130:3000/food/update",
+                    dataType:"json",
+                    type:"post",
+                    async:"true",
+                    data:{
+                        name:String(reviseName),
+                        price:Number(revisePrice),
+                        desc:String(reviseDesc),
+                        typename:String(reviseTypename),
+                        typeid:Number(reviseId),
+                        _id:String(revise_id)
+                    },
+                    success:function(data){
+                        console.log(data),
+                        alert("修改成功")
+                        revise();
+                    },
+                    error:function(err){
+                        console.log("修改失败"),
+                        revise();
+                    }
+                })
+            }
         }
 
         //根据描述搜索菜品
@@ -63,7 +101,8 @@ window.onload=function(){
            for (var n=0;n<=searchFood.length;n++){
                 document.getElementById("text3").innerHTML+="<tr>"
                 +"<td>"+searchFood[n].name+"</td>"+"<td>"+searchFood[n].price+"</td>"+"<td>"+searchFood[n].desc+"</td>"
-                +"</tr>";   
+               +"<td>"+document.getElementById("delete").innerHTML+document.getElementById("revise").innerHTML+"</td>"+"</tr>";  
+
             }
         },
         error:function(err){
@@ -92,8 +131,28 @@ $.ajax({
        for(var i=0;i<=food.length;i++){
         document.getElementById("text").innerHTML+="<tr>"
         +"<td>"+food[i].name+"</td>"+"<td>"+food[i].price+"</td>"+"<td>"+food[i].desc+"</td>"+"<td>"
-        +"</tr>";
+        +"<td>"+document.getElementById("delete").innerHTML+document.getElementById("revise").innerHTML+"</td>"+"</tr>";
+        //删除菜品
+      document.getElementById("menuDelete").onclick=function(){
+        $.ajax({
+        url:"http://118.195.129.130:3000/food/del",
+        dataType:"json",
+       type:"post",
+       async:"true",
+       data:{
+            _id:String(food[i]._id)
+       },
+       success:function Delete(data){
+       console.log(data),
+       alert("删除成功！")
+          console.log(data);
+       },
+       error:function nullDelete(err){
+       console.log("删除失败")
+        },
+       })
        }
+    };
         },
     error: function(err){
        alert("加载数据失败");
@@ -101,3 +160,6 @@ $.ajax({
     },
 })
 }   
+    
+
+

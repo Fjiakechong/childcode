@@ -150,3 +150,40 @@ body{
 	right: 80px;
 	bottom: 60px;
 }
+#menuDelete{
+	background-color: firebrick;
+	border-radius: 5px;
+	outline: none;
+	width: 56px;
+	-webkit-appearance: none;
+	border: 1px;
+	cursor: pointer;
+	padding: 5px;
+}
+#menuRevise{
+	background-color:rgb(24, 144,255) ;
+	border-radius: 5px;
+	outline: none;
+	-webkit-appearance: none;
+	border: 1px;
+	cursor: pointer;
+	padding: 5px;
+}
+#reviseWindow{
+	display:none ;
+	position: absolute;
+	right: 30%;
+	top: 30%;
+	background-color: darkolivegreen;
+	opacity: 1;
+	z-index: 1000;
+	width: 400px;
+	height: 650px;
+	margin: 0 auto;
+	border-radius: 4px;
+}
+#reviseMenuAdd{
+	position: absolute;
+	right: 100px;
+	bottom: 60px;
+}
