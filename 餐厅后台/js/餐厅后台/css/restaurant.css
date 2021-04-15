@@ -1,0 +1,189 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.substance::-webkit-scrollbar { width: 0 !important }
+body{
+	background-image: url(../img/background.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+.all{
+	position: relative;
+}
+.backG {
+   background-color: #00008B;
+}
+#face{
+	position: absolute;
+	width: 1400px;
+	height: 700px;
+	background-color:rgb(0,0,0,0.7);
+	margin:30px auto;
+	padding: 0;
+	left: 0;
+	top: 0;
+	right: 0;
+	border: 3px solid wheat;
+	overflow: hidden;
+}
+#list{
+	position: relative;
+	margin-left:20px ;
+	margin-top:20px ;
+	width:255px ;
+	height:660px ;
+	border: 1px solid darkgray;
+	float: left;
+}
+#substance{
+	position:relative;
+	margin-top: 20px;
+	width: 1095px;
+	height: 660px;
+	overflow: auto;
+	border: 2px solid darkgray;
+	float: left;
+}
+/*隐藏滚动条*/
+/*chrome 和 safari*/
+#substance::-webkit-scrollbar { width: 0 !important }
+/*IE 10+*/
+#substance {--ms-overflow-style: none;}
+/*Firefox*/
+#substance{overflow: -moz-scrollbars-none;}
+
+#food{
+	list-style-type: none;
+	
+}
+#food a{
+	color: darkorange;
+	font-size: 25px;
+	text-decoration: none;
+}
+#food li{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+#food li:hover{
+	background-color: #00008B;
+}
+.headSearch{
+	margin: 10px;
+	margin-left: 50px;
+	font-size: 25px;
+	color: cadetblue;
+}
+.headName{
+	color: darkgray;
+	font-weight: 900;
+	font-size: 17px;
+	margin: 9px;
+	margin-left: 50px;
+}
+.foodSearch{
+	height: 30px;
+	width: 180px;
+	padding-left: 10px;
+	-webkit-appearance: none;
+	border: 1px;
+	background-color: white;
+	opacity: 0.5;
+	outline: none;
+	border-radius: 5px;
+}
+.searchButton{
+	background-color: rgb(24, 144,255);
+	border-radius: 8px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	margin: 7px;
+	outline: none;
+	-webkit-appearance: none;
+	border: 1px;
+	cursor: pointer;
+}
+#fatherTable{
+	width: 80%;
+	margin: 50px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	border: 1px solid gray;
+	height: 50px;
+	background-color: darkolivegreen;
+}
+#fatherTable a{
+	color: darkgray;
+	font-weight: 600;
+}
+#sonTable{
+	width: 80%;
+	margin: 50px;
+	margin-top: 10px;
+	border: 1px solid gray;
+	color: darkgray;
+}
+#addWindow{
+	display:none ;
+	position: absolute;
+	right: 30%;
+	top: 30%;
+	background-color: darkolivegreen;
+	opacity: 1;
+	z-index: 1000;
+	width: 400px;
+	height: 550px;
+	margin: 0 auto;
+	border-radius: 4px;
+}
+.outName{
+	margin: 50px auto;
+}
+#menuAdd{
+	margin: auto;
+	position: absolute;
+	right: 80px;
+	bottom: 60px;
+}
+#menuDelete{
+	background-color: firebrick;
+	border-radius: 5px;
+	outline: none;
+	width: 56px;
+	-webkit-appearance: none;
+	border: 1px;
+	cursor: pointer;
+	padding: 5px;
+}
+#menuRevise{
+	background-color:rgb(24, 144,255) ;
+	border-radius: 5px;
+	outline: none;
+	-webkit-appearance: none;
+	border: 1px;
+	cursor: pointer;
+	padding: 5px;
+}
+#reviseWindow{
+	display:none ;
+	position: absolute;
+	right: 30%;
+	top: 30%;
+	background-color: darkolivegreen;
+	opacity: 1;
+	z-index: 1000;
+	width: 400px;
+	height: 650px;
+	margin: 0 auto;
+	border-radius: 4px;
+}
+#reviseMenuAdd{
+	position: absolute;
+	right: 100px;
+	bottom: 60px;
+}
